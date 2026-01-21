@@ -16,7 +16,7 @@ export function TTTTInteractive() {
       {sections.map((section, index) => {
         const isHovered = hoveredIndex === index;
         const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
-        
+
         return (
           <motion.div
             key={index}
@@ -45,9 +45,9 @@ export function TTTTInteractive() {
                   ease: [0.4, 0, 0.2, 1]
                 }}
               >
-                <span 
-                  className="font-black text-8xl sm:text-[10rem] lg:text-[18rem] leading-none select-none"
-                  style={{ 
+                <span
+                  className="font-black text-8xl sm:text-[10rem] lg:text-[12rem] xl:text-[14rem] leading-none select-none"
+                  style={{
                     color: section.color === '#f5e6d3' ? '#3D2800' : '#000000',
                     fontFamily: 'system-ui, -apple-system, sans-serif'
                   }}
