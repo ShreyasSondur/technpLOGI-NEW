@@ -7,7 +7,7 @@ import palmTreesImage from '@/assets/f210e8f5969baedecd2a1842ffbccb2bc840489e.pn
 import { CustomCursor } from '@/app/components/CustomCursor';
 import { GooeyHeroBackground } from '@/app/components/GooeyHeroBackground';
 import { TTTTInteractive } from '@/app/components/TTTTInteractive';
-import Group from '@/imports/Group';
+import logoImage from '@/assets/3257ca4c3a34a23c147ed9866f3f6b095c4e60ff.png';
 
 // SVG Icons for buttons
 const PhoneIcon = () => (
@@ -55,7 +55,7 @@ export default function App() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Group />
+              <img src={logoImage} alt="TechnoLOGI Logo" className="w-full h-full object-contain" />
             </motion.button>
 
             {/* Center Navigation Links */}
@@ -659,7 +659,7 @@ export default function App() {
               >
                 {/* TechnoLOGI Logo */}
                 <div className="w-full max-w-[240px] aspect-[7.5/1] mb-6 sm:mb-8">
-                  <Group />
+                  <img src={logoImage} alt="TechnoLOGI Logo" className="w-full h-full object-contain brightness-0 invert" />
                 </div>
 
                 <div className="space-y-4 sm:space-y-6 text-white">
@@ -774,7 +774,7 @@ export default function App() {
           {/* Logo */}
           <div className="flex justify-center mb-6">
             <div className="w-[200px] sm:w-[240px] md:w-[260px] aspect-[7.5/1]">
-              <Group />
+              <img src={logoImage} alt="TechnoLOGI Logo" className="w-full h-full object-contain brightness-0 invert" />
             </div>
           </div>
 
