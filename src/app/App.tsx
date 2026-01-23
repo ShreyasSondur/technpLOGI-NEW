@@ -1,12 +1,11 @@
 import { MessageCircle, Menu, X, Globe, Phone, Search, Clapperboard, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useState } from 'react';
-import DLandingPage from '@/imports/DLandingPage';
+
 import clockTowerImage from '@/assets/b83de2d1a0b49b4c4329f9a77454177f08cfc525.png';
 import palmTreesImage from '@/assets/f210e8f5969baedecd2a1842ffbccb2bc840489e.png';
 import { CustomCursor } from '@/app/components/CustomCursor';
 import { GooeyHeroBackground } from '@/app/components/GooeyHeroBackground';
-import { TTTTInteractive } from '@/app/components/TTTTInteractive';
 import Group from '@/imports/Group';
 
 // SVG Icons for buttons
@@ -553,16 +552,7 @@ export default function App() {
             </motion.div>
           </div>
 
-          {/* Decorative S Container */}
-          <motion.div
-            className="relative h-[600px] sm:h-[500px] md:h-[600px] lg:h-[400px] xl:h-[500px] mb-12 sm:mb-16 md:mb-20 overflow-hidden rounded-3xl sm:rounded-[48px]"
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true, amount: 0.1 }}
-          >
-            <TTTTInteractive />
-          </motion.div>
+
 
           {/* Video Showcase Section */}
           <motion.div
