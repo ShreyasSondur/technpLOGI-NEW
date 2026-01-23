@@ -1,4 +1,4 @@
-import { MessageCircle, Menu, X } from 'lucide-react';
+import { MessageCircle, Menu, X, Globe, Phone, Search, Clapperboard, Sparkles } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useState } from 'react';
 import DLandingPage from '@/imports/DLandingPage';
@@ -342,103 +342,122 @@ export default function App() {
             </p>
           </motion.div>
 
-          {/* Services Grid - Slush Style Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-            {/* First Row - 3 cards forming inverted V */}
+          {/* Services Grid - Vibrant Colorful Cards */}
+          {/* Services Grid - Exact Replica */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 max-w-6xl mx-auto">
+            {/* Fast Websites - Blue */}
+            {/* Layout: Text Top Left, Icon Bottom Center */}
             <motion.div
-              className="group relative overflow-hidden bg-white rounded-3xl sm:rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(4,120,87,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[350px] sm:translate-y-0"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden bg-[#5ba4fc] rounded-[40px] p-8 flex flex-col justify-between h-[340px] shadow-lg shadow-blue-200"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-blue-100/50 rounded-2xl flex items-center justify-center mb-6 text-3xl">🌐</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Fast Websites</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Blazing fast performance that ranks higher on Google and converts visitors.</p>
+              <div className="relative z-10 text-left">
+                <h3 className="text-4xl font-black text-white italic leading-[0.9] tracking-tight">
+                  FAST<br />WEBSITES
+                </h3>
+              </div>
+              <div className="self-center mt-auto">
+                <div className="w-28 h-28 bg-[#7cb8fd] rounded-[30px] flex items-center justify-center shadow-inner">
+                  <Globe className="w-16 h-16 text-[#5ba4fc]" strokeWidth={1.5} />
+                </div>
               </div>
             </motion.div>
 
+            {/* WhatsApp Integration - Green */}
+            {/* Layout: Icon Top Center (Line Art), Text Bottom Center */}
             <motion.div
-              className="group relative overflow-hidden bg-white rounded-3xl sm:rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(37,211,102,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[350px] sm:-translate-y-8"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden bg-[#25d366] rounded-[40px] p-8 flex flex-col justify-between h-[340px] shadow-lg shadow-green-200"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-green-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-green-100/50 rounded-2xl flex items-center justify-center mb-6 text-3xl">💬</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">WhatsApp Chat</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Direct integration so customers can chat with you instantly.</p>
+              <div className="self-center mt-4">
+                {/* Outline Bubble Effect */}
+                <div className="relative">
+                  <MessageCircle className="w-24 h-24 text-white/40" strokeWidth={1.5} />
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-3 h-3 bg-[#e85d75] rounded-full absolute top-[30%] left-[25%] opacity-80"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="relative z-10 text-center mb-6">
+                <h3 className="text-3xl font-black text-[#0c4a28] italic leading-[0.9] tracking-tight">
+                  WHATSAPP<br />INTEGRATION
+                </h3>
               </div>
             </motion.div>
 
+            {/* Call Buttons - Pink */}
+            {/* Layout: Text Top Left, Icon Bottom Center */}
             <motion.div
-              className="group relative overflow-hidden bg-white rounded-3xl sm:rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(230,0,118,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[350px] sm:translate-y-0"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden bg-[#e90074] rounded-[40px] p-8 flex flex-col justify-between h-[340px] shadow-lg shadow-pink-200"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-pink-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-pink-100/50 rounded-2xl flex items-center justify-center mb-6 text-3xl">📞</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Call Buttons</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">One-tap calling features to make it easy for clients to reach you.</p>
+              <div className="relative z-10 text-left">
+                <h3 className="text-4xl font-black text-white italic leading-[0.9] tracking-tight">
+                  CALL<br />BUTTONS
+                </h3>
+              </div>
+              <div className="self-center mt-auto">
+                <div className="w-28 h-28 bg-[#f04d9c] rounded-[30px] flex items-center justify-center shadow-inner">
+                  <Phone className="w-16 h-16 text-[#c70063]" strokeWidth={1.5} />
+                </div>
               </div>
             </motion.div>
 
-            {/* Second Row - 3 cards forming V */}
+            {/* Google Business - Yellow */}
+            {/* Layout: Icon Top Center, Text Bottom Left */}
             <motion.div
-              className="group relative overflow-hidden bg-white rounded-3xl sm:rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(255,213,32,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[350px] sm:-translate-y-8"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden bg-[#ffe135] rounded-[40px] p-8 flex flex-col justify-between h-[340px] shadow-lg shadow-yellow-200"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-yellow-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-yellow-100/50 rounded-2xl flex items-center justify-center mb-6 text-3xl">🔍</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Google Business</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Optimization to help your business appear in local search results.</p>
+              <div className="self-center mt-8">
+                <div className="w-28 h-28 bg-[#feeaaec2] rounded-[30px] flex items-center justify-center shadow-sm">
+                  <Search className="w-14 h-14 text-[#2b7de9] rotate-90" strokeWidth={2.5} />
+                </div>
+              </div>
+              <div className="relative z-10 text-left mb-2">
+                <h3 className="text-3xl font-black text-black italic leading-[0.9] tracking-tight">
+                  GOOGLE<br />BUSINESS
+                </h3>
               </div>
             </motion.div>
 
+            {/* Marketing Videos - Orange */}
+            {/* Layout: Text Top Left, Icon Bottom Center */}
             <motion.div
-              className="group relative overflow-hidden bg-white rounded-3xl sm:rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(255,107,53,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[350px] sm:translate-y-0"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden bg-[#ff7b42] rounded-[40px] p-8 flex flex-col justify-between h-[340px] shadow-lg shadow-orange-200"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-orange-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-orange-100/50 rounded-2xl flex items-center justify-center mb-6 text-3xl">🎬</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Marketing Videos</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Engaging video content to showcase your products and services.</p>
+              <div className="relative z-10 text-left">
+                <h3 className="text-4xl font-black text-white italic leading-[0.9] tracking-tight">
+                  MARKETING<br />VIDEOS
+                </h3>
+              </div>
+              <div className="self-center mt-auto">
+                <div className="w-28 h-28 bg-[#ffa37a] rounded-[30px] flex items-center justify-center shadow-inner">
+                  <Clapperboard className="w-16 h-16 text-[#d95622]" strokeWidth={1.5} />
+                </div>
               </div>
             </motion.div>
 
+            {/* 3D Videos - Lilac/Purple */}
+            {/* Layout: Icon Top Center (Red Square), Text Bottom Left */}
             <motion.div
-              className="group relative overflow-hidden bg-white rounded-3xl sm:rounded-[32px] p-8 sm:p-10 border border-gray-100 shadow-[0_10px_30px_rgba(0,0,0,0.05)] hover:shadow-[0_20px_40px_rgba(228,179,255,0.1)] transition-all duration-300 flex flex-col justify-between min-h-[350px] sm:-translate-y-8"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              viewport={{ once: true, amount: 0.1 }}
-              whileHover={{ y: -10 }}
+              className="group relative overflow-hidden bg-[#e0baff] rounded-[40px] p-8 flex flex-col justify-between h-[340px] shadow-lg shadow-purple-200"
+              whileHover={{ scale: 1.02 }}
             >
-              <div className="absolute top-0 right-0 w-64 h-64 bg-purple-50 rounded-full blur-3xl -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-purple-100/50 rounded-2xl flex items-center justify-center mb-6 text-3xl">✨</div>
-                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">3D Videos</h3>
-                <p className="text-gray-500 font-medium leading-relaxed">Stunning 3D visuals that capture attention and build brand prestige.</p>
+              <div className="self-center mt-8">
+                <div className="w-28 h-28 bg-gradient-to-b from-[#ff5e62] to-[#ff9966] rounded-[30px] flex items-center justify-center shadow-lg relative overflow-hidden">
+                  {/* Sparkles mimicking the image */}
+                  <Sparkles className="w-16 h-16 text-[#ffe680]" strokeWidth={0} fill="currentColor" />
+                  <div className="absolute top-2 right-3">
+                    <Sparkles className="w-6 h-6 text-white/80" strokeWidth={0} fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+              <div className="relative z-10 text-left mb-2">
+                <h3 className="text-3xl font-black text-black italic leading-[0.9] tracking-tight">
+                  3D<br />VIDEOS
+                </h3>
               </div>
             </motion.div>
           </div>

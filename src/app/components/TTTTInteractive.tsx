@@ -1,85 +1,97 @@
 import { motion } from 'motion/react';
-import { useState } from 'react';
+import { Globe, MessageCircle, Phone, Search, Video, Sparkles } from 'lucide-react';
 
 export function TTTTInteractive() {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-
-  const sections = [
-    { color: '#ff8c00', name: 'Orange', letter: 'T', code: 'ES' },
-    { color: '#1e90ff', name: 'Blue', letter: 'T', code: 'IM' },
-    { color: '#c4c4c4', name: 'Grey', letter: 'O', code: 'NI' },
-    { color: '#f5e6d3', name: 'Cream', letter: 'A', code: 'LS' }
+  const cards = [
+    {
+      title: "FAST WEBSITES",
+      icon: Globe,
+      color: "bg-[#4299E1]", // Blue
+      iconColor: "text-blue-300",
+      delay: 0.1
+    },
+    {
+      title: "WHATSAPP INTEGRATION",
+      icon: MessageCircle,
+      color: "bg-[#22C55E]", // Green
+      iconColor: "text-green-200",
+      delay: 0.2
+    },
+    {
+      title: "CALL BUTTONS",
+      icon: Phone,
+      color: "bg-[#EC4899]", // Pink
+      iconColor: "text-pink-300",
+      delay: 0.3
+    },
+    {
+      title: "SEO OPTIMIZED",
+      icon: Search,
+      color: "bg-[#FACC15]", // Yellow
+      iconColor: "text-yellow-700",
+      delay: 0.4
+    },
+    {
+      title: "MARKETING VIDEOS",
+      icon: Video,
+      color: "bg-[#FB923C]", // Orange
+      iconColor: "text-orange-200",
+      delay: 0.5
+    },
+    {
+      title: "PREMIUM DESIGN",
+      icon: Sparkles,
+      color: "bg-[#C084FC]", // Purple
+      iconColor: "text-purple-200",
+      delay: 0.6
+    }
   ];
 
   return (
-    <div className="w-full h-full flex flex-col lg:flex-row items-stretch">
-      {sections.map((section, index) => {
-        const isHovered = hoveredIndex === index;
-        const isOtherHovered = hoveredIndex !== null && hoveredIndex !== index;
-
-        return (
+    <div className="w-full h-full p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 h-full">
+        {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="relative w-full lg:w-auto h-auto lg:h-full overflow-hidden cursor-pointer"
-            initial={{ flex: 1 }}
-            animate={{
-              flex: isHovered ? 2 : isOtherHovered ? 0.5 : 1
-            }}
-            transition={{
-              duration: 0.5,
-              ease: [0.4, 0, 0.2, 1]
-            }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-            style={{ backgroundColor: section.color }}
+            className={`${card.color} rounded-3xl p-6 relative overflow-hidden cursor-pointer flex flex-col justify-between h-[300px] lg:h-auto`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: card.delay }}
+            whileHover={{ scale: 0.98 }}
           >
-            {/* Bold Letter */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <motion.div
-                className="w-full h-full flex items-center justify-center"
-                animate={{
-                  scale: isHovered ? 1.1 : 1
-                }}
-                transition={{
-                  duration: 0.5,
-                  ease: [0.4, 0, 0.2, 1]
-                }}
-              >
-                <span
-                  className="font-black text-8xl sm:text-[10rem] lg:text-[12rem] xl:text-[14rem] leading-none select-none"
-                  style={{
-                    color: section.color === '#f5e6d3' ? '#3D2800' : '#000000',
-                    fontFamily: 'system-ui, -apple-system, sans-serif'
-                  }}
-                >
-                  {section.letter}
-                </span>
-              </motion.div>
+            {/* Background Icon (Large & Faded) */}
+            <div className="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none">
+              <div className="bg-white/30 p-8 rounded-3xl backdrop-blur-sm">
+                <card.icon size={80} className="text-white" />
+              </div>
             </div>
 
-            {/* Code Badge */}
-            <div className="absolute bottom-4 left-4 lg:bottom-8 lg:left-8">
-              <motion.div
-                className="bg-white rounded-2xl px-4 py-2 lg:px-6 lg:py-3 shadow-lg"
-                whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <span className="text-lg lg:text-2xl font-bold text-gray-900">
-                  {section.code}
-                </span>
-              </motion.div>
-            </div>
-
-            {/* Overlay on hover */}
+            {/* Floating Bubble Animation (Optional cosmetic) */}
             <motion.div
-              className="absolute inset-0 bg-black/10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: isHovered ? 1 : 0 }}
-              transition={{ duration: 0.3 }}
+              className="absolute top-10 right-10 w-4 h-4 rounded-full bg-white/30"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
+
+            {/* Content */}
+            <div className="z-10">
+              <h3 className="text-3xl font-black text-white italic tracking-wider leading-tight w-3/4">
+                {card.title.split(' ').map((word, i) => (
+                  <span key={i} className="block">{word}</span>
+                ))}
+              </h3>
+            </div>
+
+            {/* Small Icon Bottom Right */}
+            <div className="absolute bottom-6 right-6 z-10">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-md">
+                <card.icon className="text-white" size={24} />
+              </div>
+            </div>
+
           </motion.div>
-        );
-      })}
+        ))}
+      </div>
     </div>
   );
 }
